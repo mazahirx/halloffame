@@ -12,10 +12,10 @@
             <a href="/read" class="text-blue-500 underline mb-2">View All Users</a>
         <h1 class="text-3xl tracking-tight mb-2 mt-2">Create Users</h1>
         <div class="user-form">
-            <form action="/read" method="post">
-                <input type="text" placeholder="Name" class="outline-none border border-zinc-500 rounded p-2">
-                <input type="text" placeholder="Email" class="outline-none border border-zinc-500 rounded p-2">
-                <input type="text" placeholder="Image Url" class="outline-none border border-zinc-500 rounded p-2">
+            <form action="/create" method="post">
+                <input type="text" placeholder="Name" name="name" class="outline-none border border-zinc-500 rounded p-2">
+                <input type="text" placeholder="Email" name="email" class="outline-none border border-zinc-500 rounded p-2">
+                <input type="text" placeholder="Image Url" name="imgurl" class="outline-none border border-zinc-500 rounded p-2">
                 <input type="submit" value="Create User" class="outline-none border border-zinc-500 text-white-600 bg-amber-600 rounded p-2">
             </form>
         </div>
