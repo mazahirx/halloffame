@@ -1,0 +1,24 @@
+{
+  "name": "halloffame",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/mazahirx/halloffame#readme",
+  "bugs": {
+    "url": "https://github.com/mazahirx/halloffame/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mazahirx/halloffame.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.2.2"
+  }
+}
