@@ -11,21 +11,11 @@
         <div class="users-container p-10">
             <a href="/read" class="text-blue-500 underline mb-2">View All Users</a>
         <h1 class="text-3xl tracking-tight mb-2 mt-2">Edit Users</h1>
-        <h3 class="tracking-tight"> Existing Details </h3>
-        <div class="user-form">
-            <% users.forEach(function(user){ %>
-                <form action="/create" method="post">
-                    <input type="text" placeholder="Name" name="name" value="<%= user.name %>" disabled class="outline-none text-zinc-400 border border-zinc-500 rounded p-2">
-                    <input type="text" placeholder="Email" name="email" value="<%= user.email %>" disabled class="outline-none text-zinc-400 border border-zinc-500 rounded p-2">
-                    <input type="text" placeholder="Image Url" name="imgurl" value="<%= user.imgurl %>" disabled class="outline-none text-zinc-400 border border-zinc-500 rounded p-2">
-                </form>
-            <% }) %>
-        </div>
         <h3 class="tracking-tight"> New Details </h3>
-        <form action="/edit" method="post">
-                <input type="text" placeholder="Name" name="name" class="outline-none border border-zinc-500 rounded p-2">
-                <input type="text" placeholder="Email" name="email" class="outline-none  border border-zinc-500 rounded p-2">
-                <input type="text" placeholder="Image Url" name="imgurl" class="outline-none  border border-zinc-500 rounded p-2">
+        <form action="/edit/<%= users._id %>" method="post">
+                <input type="text" placeholder="Name" name="name" value="<%= users.name %>" class="outline-none border border-zinc-500 rounded p-2">
+                <input type="text" placeholder="Email" name="email" value="<%= users.email %>" class="outline-none  border border-zinc-500 rounded p-2">
+                <input type="text" placeholder="Image Url" name="imgurl" value="<%= users.imgurl %>" class="outline-none  border border-zinc-500 rounded p-2">
                 <input type="submit" value="Update User" class="outline-none border border-zinc-500 text-white-600 bg-amber-600 rounded p-2">
             </form>
         </div>

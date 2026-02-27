@@ -21,7 +21,7 @@ app.get("/delete/:id",async (req,res)=>{
     res.redirect("/read");
 })
 app.get("/edit/:id",async (req,res)=>{
-    let users = await userModal.find();
+    let users = await userModal.findById(req.params.id);
     res.render("edit", {users});
 })
 
@@ -35,7 +35,13 @@ app.post("/create",async (req,res)=>{
 
     res.redirect("/read");
 })
-app.post("/edit",async (req,res)=>{
+app.post("/edit/:id",async (req,res)=>{
+    let {name,email,imgurl} = req.body;
+    await userModal.findByIdAndUpdate(
+        req.params.id,
+        { name, email, imgurl },
+        { new: true }
+    );
     res.redirect("/read");
 })
 
