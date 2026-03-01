@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcrypt');
 const app = express();
 const userModal = require("./modals/user");
 const { parseArgs } = require('util');
