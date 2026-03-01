@@ -14,6 +14,9 @@ app.use(express.static(path.join(__dirname,'public')));
 app.get("/",(req,res)=>{
     res.render('index');
 })
+app.get("/login",(req,res) =>{
+    res.render('login');
+})
 app.get("/read",async (req,res)=>{
     let users = await userModal.find();
     res.render("read",{users})
