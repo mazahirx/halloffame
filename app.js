@@ -40,7 +40,8 @@ app.post("/create",(req,res)=>{
                     email,
                     imgurl
                     });
-
+                let token = jwt.sign({email},"shhhhh");
+                res.cookie("token",token);
                 res.redirect("/read");
                 })
     })
