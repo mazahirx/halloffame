@@ -30,15 +30,22 @@ app.get("/edit/:id",async (req,res)=>{
     res.render("edit", {users});
 })
 
-app.post("/create",async (req,res)=>{
+app.post("/create",(req,res)=>{
     let {name,email,imgurl} = req.body;
-    let newUser = await userModal.create({
-        name,
-        email,
-        imgurl
-    });
 
-    res.redirect("/read");
+    bcrypt.genSalt(10,(err,salt) =>{
+        bcrypt.hash(name,salt,async(err,hash)=>{
+                    let newUser = await userModal.create({
+                    name : hash,
+                    email,
+                    imgurl
+                    });
+
+                res.redirect("/read");
+                })
+    })
+
+
 })
 app.post("/edit/:id",async (req,res)=>{
     let {name,email,imgurl} = req.body;
